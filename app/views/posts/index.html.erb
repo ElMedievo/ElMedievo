@@ -1,1 +1,9 @@
-<h2 align="center">The Medieval Website</h2>
+<h1>Anuncios Medievales</h1>
+<hr id="spacer"/>
+<% @posts.each do |post| %>
+  <div class="well">
+    <h3><%= post.title %></h3>
+    <p><%= post.body %></p>
+    <%= link_to "Read More", post_path(post), class: "btn btn-dark" %>
+  </div>
+<% end %>
