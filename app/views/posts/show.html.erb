@@ -1,8 +1,11 @@
 <h2><%= @post.title %></h2>
 <p><%= @post.body %></p>
 <hr/>
-<%= link_to "Edit", edit_post_path(@post), class: "btn btn-dark" %>
-<%= link_to "Delete", post_path(@post),
-                      method: :delete,
-                      class: "btn btn-danger"
-%>
+<p>
+  <%= link_to "Editar", edit_post_path(@post), class: "btn btn-dark" %>
+  <%= button_to "Borrar", post_path(@post),
+                          method: :delete,
+                          class: "btn btn-danger"
+  %>
+</p>
+<hr/>

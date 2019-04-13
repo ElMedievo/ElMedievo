@@ -1,5 +1,5 @@
 body {
-  font-family: Cambria;
+  font-family: "Courier New"
 }
 a {
    color: inherit;
@@ -8,3 +8,18 @@ a {
    color: #d8d8d8;
    text-decoration-line: none;
  }
+.header {
+  text-align: center;
+}
+.post_body_format {
+
+}
+div.letter_section {
+	font-size: 25px;
+}
+div.diamond_section {
+	font-size: 20px;
+}
+div.rules_enum {
+	font-size: 15px;
+}
