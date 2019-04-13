@@ -23,3 +23,21 @@ div.diamond_section {
 div.rules_enum {
 	font-size: 15px;
 }
+#img_1 {
+  width: 400px;
+  height: 500px;
+  display: inline-block;
+  margin-left: 400px;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+}
+#img_2 {
+  width: 400px;
+  height: 500px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 400px;
+  margin-top: 50px;
+  border-radius: 30px;
+}
