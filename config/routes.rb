@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
     get 'about' => 'sections#about'
     get 'rules' => 'sections#rules'
-    
+    get 'about' => 'sections#about'
+
     resources :posts do
       resources :comments
     end
