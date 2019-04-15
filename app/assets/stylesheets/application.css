@@ -30,11 +30,10 @@ div.rules_enum {
 #img_1 {
   width: 900px;
   height: 506px;
-  display: inline-block;
   border-radius: 7px;
-  margin-left: 400px;
+  display: block;
+  margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
   background: #2c2c2c;
   padding: 7px;
   border: 1px solid #999;
