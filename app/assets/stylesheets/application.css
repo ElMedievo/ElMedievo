@@ -15,6 +15,9 @@ a {
 .post_body_format {
 
 }
+div.about {
+  font-size: 18px;
+}
 div.letter_section {
 	font-size: 25px;
 }
@@ -35,13 +38,4 @@ div.rules_enum {
   background: #2c2c2c;
   padding: 7px;
   border: 1px solid #999;
-}
-#img_2 {
-  width: 400px;
-  height: 500px;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: 400px;
-  margin-top: 50px;
-  border-radius: 30px;
 }
