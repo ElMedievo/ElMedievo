@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'about' => 'sections#about'
     get 'rules' => 'sections#rules'
     get 'about' => 'sections#about'
+    get 'videos' => 'sections#videos'
 
     resources :posts do
       resources :comments
