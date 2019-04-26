@@ -38,3 +38,15 @@ div.rules_enum {
   padding: 7px;
   border: 1px solid #999;
 }
+.video {
+  width: 900px;
+  height: 506px;
+  border-radius: 7px;
+  display: block;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #2c2c2c;
+  padding: 7px;
+  border: 1px solid #999;
+}
