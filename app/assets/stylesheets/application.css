@@ -50,3 +50,13 @@ div.rules_enum {
   padding: 7px;
   border: 1px solid #999;
 }
+.poll {
+  width: 1000px;
+  height: 260px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  border-radius: 7px;
+  border: 2px solid #999;
+}
