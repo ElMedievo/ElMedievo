@@ -1,3 +1,3 @@
 # Medievo-Web
 
-The website for the medieval server.
+This repository has been archived due to a website re-design. https://elmedievo.org/
