@@ -1,13 +1,22 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-    root 'posts#index', as: 'home'
+  devise_for :users, :path => '/',
+                     :path_names => {
+                       :sign_in => 'login',
+                       :sign_up => 'register'
+                     },
+                     :controllers => {
+                       :confirmations => 'confirmations',
+                       :registrations => 'registrations'
+                     }
 
-    get 'about' => 'sections#about'
-    get 'rules' => 'sections#rules'
-    get 'about' => 'sections#about'
-    get 'videos' => 'sections#videos'
+  mount Peek::Railtie => '/peek'
 
-    resources :posts do
-      resources :comments
-    end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'application#index'
+  get 'play' => 'play#show'
+  get 'rules' => 'rules#show'
+  get 'history' => 'history#show'
+  get 'staff' => 'staff#show'
+  get 'channels' => 'channels#show'
 end

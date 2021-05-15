@@ -1,66 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Medievo</title>
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/ElMedievo/Data/master/Website/favicon.ico" />
+    <title>ElMedievo</title>
+
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag "application" %>
-    <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", media: "all" %>
-    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= csp_meta_tag %>
+
+    <meta content='José Benavente' name='author' />
+    <meta charset='UTF-8' />
+    <meta content='website' property='og:type' />
+    <meta content='ElMedievo' property='og:title' />
+    <meta content="The Medieval Minecraft Server" property='og:description' />
+    <meta content='https://elmedievo.org/' property='og:url' />
+    <meta content='https://avatars.githubusercontent.com/u/45088606?s=400&u=57d61415f0e8f961e91ab8fcc276824de58e0906&v=4' property='og:image' />
+    <meta content='#8b0000' name='theme-color' />
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+
+    <%= favicon_link_tag 'favicon.ico' %>
+
+    <link href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css' media='screen' rel='stylesheet' />
+    <link href='//fonts.googleapis.com/css?family=Noto+Sans:700,400,300' media='screen' rel='stylesheet' />
+    <link href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' media='screen' rel='stylesheet' />
+
+    <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>$(function () { $("[data-toggle='tooltip']").tooltip(); });</script>
+    <script>$(document).ready(function() { $('span.highlight > code').each(function(i, block) { hljs.highlightBlock(block); }); });</script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <%= link_to "El Medievo", home_path, class: "navbar-brand" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
+    <% if user_signed_in? %>
+      <%= render 'peek/bar' %>
+    <% end %>
+    <%= render :partial => "nav" %>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item nav-link">
-            <%= link_to "Inicio", home_path %>
-        </li>
-        <li class="nav-item nav-link">
-          <a href="/about" tabindex="-1" aria-disabled="true">¿Quiénes somos?</a>
-        </li>
-        <li class="nav-item nav-link">
-          <a href="/rules" tabindex="-1" aria-disabled="true">Reglas</a>
-        </li>
-        <li class="nav-item nav-link">
-            <%= link_to "Anunciar", new_post_path %>
-        </li>
-        <li class="nav-item nav-link">
-          <a href="/videos" tabindex="-1" aria-disabled="true">Videos</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav nav-right">
-        <li class="nav-item nav-link">
-            <a href="https://discord.gg/K5xAY2H" title="Discord!" target="_blank">Discord</a>
-        </li>
-        <li class="nav-item nav-link">
-            <a href="https://github.com/ElMedievo" title="Repositorios" target="_blank">Github</a>
-        </li>
-      </ul>
-      </div>
-    </nav>
-    <br/>
-    <h2 align="center">us.elmedievo.org</h2>
-    <p style="font-size: 40px; color: #00c200; text-shadow: 0.5px 0.5px black;" align="center">¡Importante!</p>
-    <iframe class="poll" src="https://strawpoll.com/embed/6sbw12xe">
-    </iframe>
-    <br/>
+    <%= yield %>
 
-    <div>
-      <br/>
-      <%= yield %>
+    <div class="text-center">
+      <% unless notice.nil? %>
+        <div class="container">
+          <p class="notice"><%= notice %></p>
+        </div>
+      <% end %>
+      <% unless alert.nil? %>
+        <div class="container">
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
     </div>
+
+    <%= render :partial => "footer" %>
   </body>
-  <footer>
-    <br/>
-    <img id="img_1" title="El mejor server" src="https://raw.githubusercontent.com/ElMedievo/Data/master/Website/images/medieval_players.png"/>
-      <br/>
-      <hr/>
-      <p align="center">© 2019 El Pepo</p>
-      <br/>
-  </footer>
 </html>

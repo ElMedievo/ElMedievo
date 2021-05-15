@@ -1,0 +1,463 @@
+@import "peek/peek";
+@import "peek/views/performance_bar";
+@import "play";
+@import "devise";
+
+body {
+  padding-bottom: 40px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hr {
+  border-top-color: #BBB;
+}
+
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+    padding: 9px 14px;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in{
+    display:block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container{
+    width:992px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header h1 small {
+    display: none;
+  }
+}
+
+.navbar-default {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-weight: 300;
+}
+
+.navbar-brand img {
+  margin-top: -6px;
+  margin-right: 6px;
+}
+
+.navbar-nav > .active > a {
+  color: #333333;
+}
+
+.navbar-collapse ul.nav li:hover {
+  background-color: #E5E5E5;
+}
+
+#top-navbar-collapse-button {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+#top-navbar-collapse-button .badge {
+  position:  absolute;
+  top: 2px;
+  right: 2px;
+  padding: 2px 4px;
+  font-size: 75%;
+  background-color: #f0ad4e;
+}
+
+.navbar-collapse .badge {
+  padding: 0.1em 0.4em;
+  font-size: 75%;
+  top: -1px;
+  position: relative;
+  background-color: #f0ad4e;
+}
+
+.page-header {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.dropdown-menu .active > a {
+  color: #EEE;
+}
+
+.dropdown-menu .active > a:hover {
+  color: #FFF;
+}
+
+.label-purple {
+  background-color: purple;
+}
+
+.label-yellow {
+  background-color: #d9b500;
+}
+
+.label-pink {
+  background-color: #ee00ff;
+}
+
+.label-light-blue {
+  background-color: #00d5ff;
+}
+
+.label, .badge {
+  text-shadow: none;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  margin-top: 2px;
+}
+
+.carousel {
+  height: 480px;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+.carousel img {
+  min-height: 480px;
+  min-width: 950px;
+  width: 100%;
+}
+
+.popover-content > p {
+  font-size: 14px;
+}
+
+span.label > [class^="icon-"], [class*=" icon-"] {
+  margin-top: 1px;
+}
+
+ul.dropdown-menu {
+  z-index: 2000;
+}
+
+.listing {
+  clear: both;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+
+.listing .headings {
+  font-weight: bold;
+}
+
+.listing .row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.listing .row.topic {
+  border-top: 1px solid #ddd;
+}
+
+.listing > .row > div {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.listing > .row:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+@media(max-width: 767px) {
+  .listing .latest-post {
+    margin-top: 8px;
+    padding-left: 40px;
+    font-size: 85%;
+  }
+  .listing .latest-post small {
+    font-size: inherit;
+  }
+}
+
+.peek-rblineprof-file pre {
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.main-banner {
+  background-image:
+          linear-gradient(
+                          rgba(0.0, 0.0, 0.0, 0.6),
+                          rgba(0.0, 0.0, 0.0, 0.6)
+          ),
+          image_url("splash.png");
+  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,0.1),inset 0 -3px 7px rgba(0, 0, 0, 0.2);
+  background-position: center;
+  height: 725px;
+  margin-bottom: 0 !important;
+}
+
+.jumbotron.main {
+  background-color: transparent;
+  height: 470px;
+  overflow: hidden;
+  position: relative;
+  padding: 40px 0;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 10px rgba(0,0,0,.5), 0 0 30px rgba(0,0,0,.1);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+  -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+  box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+}
+
+.jumbotron.main h1 {
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.jumbotron.main p {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 10px rgba(0,0,0,.5), 0 0 30px rgba(0,0,0,.9);
+}
+
+.jumbotron.main a {
+  color: #fff;
+  color: rgba(255,255,255,.5);
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.jumbotron.main a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,.25);
+}
+
+.masthead.main .btn {
+  padding: 17px 24px;
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
+  border: 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
+}
+
+.masthead.main .btn:active {
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+}
+
+.masthead.main {
+  margin-bottom: 0;
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5),0 0 30px rgba(0,0,0,0.1);
+}
+
+.masthead.main h1 {
+  font-size: 87px;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.masthead.main p {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.25;
+}
+
+.masthead.main a.btn {
+  margin-left: 8px;
+}
+
+@media screen and (min-width: 480px) {
+  .masthead.main p {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .masthead.main p {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .masthead.main h1 {
+    font-size: 110px;
+  }
+  .masthead.main p {
+    font-size: 40px;
+  }
+}
+
+.subhead {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.subhead h1 {
+  font-size: 60px;
+}
+.subhead p {
+  margin-bottom: 20px;
+}
+.subhead .navbar {
+  display: none;
+}
+
+.tiny-input {
+  font-size: 10px !important;
+  height: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+.tiny-text {
+  font-size: 80%;
+}
+
+.breadcrumb > li + li:before {
+  content: "» ";
+}
+
+.nav.nav-tabs {
+  margin-bottom: 20px;
+}
+
+.nav a {
+  outline: none;
+}
+
+section .navbar {
+  margin-bottom: 20px;
+}
+
+blockquote {
+  /* Override bootstrap 3 changes */
+  font-size: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.table-container {
+  /* To allow wide tables to be scrolled horizontally on small screens */
+  clear: both;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.search {
+  width: 200px;
+  padding: 10px 20px;
+}
+
+@media(max-width: 991px) {
+  .navbar-static-top i.fa {
+    width: 24px;
+  }
+}
+
+pre.about-me, .about-me pre {
+  white-space: pre-wrap !important;
+}
+
+.about-me .btn {
+  white-space: normal;
+}
+
+.splash-logo {
+  border-radius: 3px;
+  outline: none;
+}
+
+.ip input {
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 20px;
+  margin: 0;
+  outline: none;
+}
+
+.ip input:hover {
+  cursor: pointer;
+}
+
+.ip .label {
+  font-weight: bold !important;
+  font-size: 14px !important;
+}
+
+footer li.heading {
+  padding-left: 12px;
+  margin-bottom: 8px;
+}
+
+footer li a {
+  font-size: 13px;
+  padding: 6px 12px !important;
+}
+
+footer .follow-us li img {
+  width: 22px;
+  height: 22px;
+  margin-right: 3px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.profile-head-mini {
+  width: 21px;
+  height: 21px;
+  border-radius: 2.5px;
+  margin-right: 4px;
+}
+
+.img-thumbnail {
+  margin-top: 15px;
+}
